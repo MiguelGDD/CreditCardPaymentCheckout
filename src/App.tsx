@@ -1,20 +1,14 @@
 import React from 'react';
-import {
-  Text,
-  View,
-} from 'react-native';
-
 import { store } from './redux/store';
 import { Provider } from 'react-redux';
+import RootNavigator from './navigation/RootNavigator';
 
 
 function App(): React.JSX.Element {
 
   return (
     <Provider store={store}>
-      <View>
-        <Text>Test</Text>
-      </View>
+      <RootNavigator />
     </Provider>
   );
 }
