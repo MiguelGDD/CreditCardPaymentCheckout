@@ -8,10 +8,15 @@ interface Product {
 
 interface ProductState {
   items: Product[];
+  cart: Product[];
 }
 
 const initialState: ProductState = {
-  items: [],
+  items: [
+    {id: '1', name: 'Producto A', price: 100},
+    {id: '2', name: 'Producto B', price: 200},
+  ],
+  cart: [],
 };
 
 const productSlice = createSlice({
@@ -24,8 +29,11 @@ const productSlice = createSlice({
     addProduct: (state, action) => {
       state.items.push(action.payload);
     },
+    addProductToCart: (state, action) => {
+      state.cart.push(action.payload);
+    },
   },
 });
 
-export const {setProducts, addProduct} = productSlice.actions;
+export const {setProducts, addProduct, addProductToCart} = productSlice.actions;
 export default productSlice.reducer;

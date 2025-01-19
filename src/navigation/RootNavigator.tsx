@@ -4,6 +4,7 @@ import {  NavigationContainer } from '@react-navigation/native';
 
 import SplashScreen from '../screens/SplashScreen';
 import Home from '../screens/Home';
+import Header from '../components/common/Header';
 
 const Stack = createStackNavigator();
 
@@ -11,8 +12,9 @@ const RootNavigator = () => {
   return (
     <NavigationContainer
     >
+      <Header title="Shop" />
     <Stack.Navigator
-      initialRouteName="Splash"
+      initialRouteName="Home"
       screenOptions={{
         headerShown: false,
       }}
